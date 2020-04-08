@@ -7,8 +7,8 @@ import folium
 from folium.plugins import HeatMap
 
 # #Load the pickeled dataframe
-# df = pd.read_pickle('data/pickled_df')
-# df = df.dropna()
+df = pd.read_pickle('data/pickled_df_')
+df = df.dropna()
 
 #Create a map object
 denver_map = folium.Map(location=[39.75782,-104.831338],
@@ -35,41 +35,30 @@ folium.GeoJson(
 folium.LayerControl().add_to(denver_map)
 denver_map.save('folium_nbh.html')
 
-# #Heat_map
-# heat_map = folium.FeatureGroup(name = 'heat_map')
-# max_amount = float(60)
-# heat_map.add_child( HeatMap( list(zip(df['GEO_LAT'].values, df['GEO_LON'].values)), 
-#                    min_opacity=0.2,
-#                    max_val=max_amount,
-#                    radius=5.5, blur=3.5, 
-#                    max_zoom=1, 
-#                  ))
-# denver_map.add_child(heat_map)
+#Heat_map
+heat_map = folium.FeatureGroup(name = 'heat_map')
+max_amount = float(60)
+heat_map.add_child( HeatMap( list(zip(df['Longitude'].values, df['Latitude'].values)), 
+                   min_opacity=0.2,
+                   max_val=max_amount,
+                   radius=5.5, blur=3.5, 
+                   max_zoom=1, 
+                 ))
+denver_map.add_child(heat_map)
 
 
-# def map_plotter(df, feature_map, color):
-#     '''
-#     Receives a dataframe an plots geo-locations each elment on the map
-    
-#     ARGS:
-#         df -> Filtered dataframe only containing relevant datapoints
-#         feature_map -> the Feature group the points will be added to
-#         color -> color of dots
-        
-#     Return:
-#         none
-#     '''
-    
-#     for index, row in df.iterrows():
-#         folium.CircleMarker(location=(row['GEO_LAT'], row['GEO_LON']),
-#                                     radius=.75,
-#                                     color=color,
-#                                     popup=str('Fatalities: ' + str(row['FATALITIES']) \
-#                                               + '\nDate: ' + row['DATE'].strftime('%x') \
-#                                               + '\nTime: '+ row['DATE'].strftime('%X') \
-#                                               + '\nContrib. Factor: ' + str(row['TU1_DRIVER_HUMANCONTRIBFACTOR'])
-#                                              ),
-#                                     fill=True).add_to(feature_map)
+def plotDot(point):
+    '''input: series that contains a numeric named latitude and a numeric named longitude
+    this function creates a CircleMarker and adds it to your this_map'''
+    folium.CircleMarker(location=[point.Latitude, point.Longitude],
+                        radius=2,
+                        weight=0,#remove outline
+                        popup = point.Agency,
+                        fill_color='#000000').add_to(denver_map)
+
+#use df.apply(,axis=1) to iterate through every row in your dataframe
+df1.apply(plotDot, axis = 1)
+
 
 # #Add a layer for all accidents involving cyclists
 # bike_map = folium.FeatureGroup(name = 'bike_map')
