@@ -64,7 +64,7 @@ It's also interesting to see where these requests are coming from:
 ![](images/311_requests_by_neighborhood_side_hist.png)
 
 ## Mapping Requests
-he best way to look at this data is on a map that codes each data point by neighborhood. 
+The best way to look at this data is on a map that codes each data point by neighborhood. 
 
 Here are all of the requests to Denver 311, this map breaks it out by agency based on sheer number of requests by neighborhood:
 
@@ -91,3 +91,6 @@ And the Clerk & Recorder:
 ![](images/clerk_means.gif)
 
 The html file for both of these maps are located in the [folium folder](https://github.com/jpmiller10/411-on-Denver-311/tree/master/folium) folder of this repo and can be downloaded and run from your local machine.
+
+## Conclusion
+This data is very accessible when looking at it mapped, however, without a few more datasets being joined in to add functionality to some of the categories (i.e. employment data to analyze the output per city employee at each agency, or median home values for the neighborhood) the best application for this data is to use it as mapped. That way you can ask it a question about how long it will take to have a request fulfilled and you can navigate to a result. 
