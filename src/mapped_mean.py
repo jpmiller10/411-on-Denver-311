@@ -5,14 +5,6 @@ import json
 import os
 import folium
 
-# df = pd.read_pickle('data/geo_requests_2018_pickled_df')
-#df_n = df[['Agency', 'NBHD_NAME', 'Response_Value']].groupby(['NBHD_NAME']).describe()
-#df_n.to_csv('data/neighborhood_vals', encoding ='utf-8')
-
-
-# rt= pd.read_csv('data/neighborhood_vals')
-# df_an = df[['Agency', 'NBHD_NAME', 'Response_Value']].groupby(['Agency', 'NBHD_NAME']).describe()
-# df_an.to_csv('data/neighborhood_agency_vals', encoding ='utf-8')
 
 # Import saved df
 rt= pd.read_csv('data/neighborhood_vals')
