@@ -1,4 +1,4 @@
-# 411-on-Denver-311##
+# 411-on-Denver-311
 
 ## Background & Motivation
 The City of Denver provides several essential services to its residents through the use of a centralized city service portal known as Denver 311. According to their website:
