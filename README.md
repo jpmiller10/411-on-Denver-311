@@ -72,7 +72,7 @@ Here are all of the requests to Denver 311, this map breaks it out by agency bas
 
 This map looks at the mean response time for the same info:
 
-![](images/means_map.gif)
+![](images/means_with_nbhd.gif)
 
 These maps focus on where our elected officials are receiving the most requests from:
 
