@@ -8,3 +8,11 @@ data/
 src/maps.ipynb
 src/action.ipynb
 .ipynb
+
+clean_data.py
+clean_nbh.py
+geotest.py
+join_df.py
+mapping.py
+maps.py
+pointsmap.ipynb
