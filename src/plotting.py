@@ -179,5 +179,3 @@ if __name__ == "__main__":
 
     fig16, ax16 = plt.subplots(1, 1, figsize=(25, 15))
     plot_elected_and_response_time(dfgeo,ax16, 'Tech Services', col = 'NBHD_NAME', vals = ['NONE'], title = 'Tech Services Response Time in Days')
-
-    

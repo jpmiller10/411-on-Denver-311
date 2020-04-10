@@ -197,5 +197,3 @@ folium.GeoJson(
 folium.LayerControl().add_to(denver_map)
 #save
 denver_map.save('folium_mapped_means.html')
-
-

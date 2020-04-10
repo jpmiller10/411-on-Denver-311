@@ -32,8 +32,6 @@ rta_ts = rta[rta['Agency'] == 'Tech Services']
 
 
 
-
-
 # Create Folium basemap
 denver_map = folium.Map(location=[39.80782,-104.831338],
                         zoom_start=11,
