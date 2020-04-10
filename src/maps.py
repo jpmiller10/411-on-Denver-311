@@ -146,7 +146,7 @@ folium.GeoJson(
 
 
 '''
-def plotDot(point, 'name', color):
+def plotDot(point):
     '''input: series that contains a numeric named latitude and a numeric named longitude
     this function creates a CircleMarker and adds it to your this_map'''
     folium.CircleMarker(location=[point.Latitude, point.Longitude],

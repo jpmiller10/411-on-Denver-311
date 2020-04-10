@@ -95,7 +95,8 @@ def response_time(df, col1, col2):
     Retrun:
         df: dataframe
     ''' 
-    df['Response Time']= df[col2] - df[col1] 
+    df['Response_Time']= df[col2] - df[col1]
+    df['Response_Value'] = df['Response_Time'].dt.total_seconds()/84600 
     return df
 
 def drop_to_lat_long(df, col1, col2):
@@ -136,12 +137,15 @@ if __name__ == "__main__":
     columns_to_keep_data = ['Case Summary', 'Case Created dttm', 'Case Closed dttm',
        'Longitude', 'Latitude', 'Agency'] 
     df_2018 = keep_cols(df_2018, columns_to_keep_data)
+
     numeric_columns=['Longitude', 'Latitude']
     category_columns = ['Agency']
     df_2018 = to_numeric(df_2018, numeric_columns)
     df_2018 = to_datetime(df_2018, ['Case Created dttm','Case Closed dttm'])
     df_2018 = to_categorical(df_2018, category_columns)
+
     df_2018 = response_time(df_2018, 'Case Created dttm', 'Case Closed dttm')
+    df_2018 = df_2018.rename(columns = {'Case Summary':'Case_Summary', 'Case Created dttm':'Case_Created_dttm', 'Case Closed dttm':'Case_Closed_dttm'}) 
     save_csv(df_2018, 'all_requests_2018')
     save_pickle(df_2018, 'all_requests_2018')  
     drop_to_lat_long(df_2018, 'Longitude', 'Latitude')

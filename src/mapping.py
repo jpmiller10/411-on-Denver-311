@@ -36,26 +36,29 @@ def create_map(map_name, latitude, longitude, style = "Stamen Toner", zoom = 11)
                         tiles=style)
     return map_name
 
-# def plot_requests(df, feature_map, color):
-#     '''
-#     Plots coordinates on interactive map
-#     Arguments:
-#         df -> Filtered dataframe only containing relevant datapoints
-#         feature_map -> the Feature group the points will be added to
-#         color -> color of dots    
-#     Return:
-#         none
-#     '''
-#     for index, row in df.iterrows():
-#         folium.CircleMarker(location=(row['Latitude'], row['Longitude']),
-#                                     radius=.75,
-#                                     color=color,
-#                                     popup = str('Case Summary: ' + str(row['Case Summary']) \
-#                                         + '\nAgency: ' + str(row['Agency']) \
-#                                         + '\nCase Opened: ' + str(row['Case Created dttm']) \
-#                                         + '\nResponse Time: '+ str(row['Response Time'])
-#                                              ),
-#                                     fill=True).add_to(feature_map)
+'''
+def plot_requests(df, feature_map, color):
+    '''
+    Plots coordinates on interactive map
+    Arguments:
+        df -> Filtered dataframe only containing relevant datapoints
+        feature_map -> the Feature group the points will be added to
+        color -> color of dots    
+    Return:
+        none
+    '''
+    for index, row in df.iterrows():
+        folium.CircleMarker(location=(row['Latitude'], row['Longitude']),
+                                    radius=.75,
+                                    color=color,
+                                    popup = str('Case Summary: ' + str(row['Case_Summary']) \
+                                        + '\nAgency: ' + str(row['Agency']) \
+                                        + '\nCase Opened: ' + str(row['Case_Created_dttm']) \
+                                        + '\nResponse Time: '+ str(row['Response_Time'])
+                                             ),
+                                    fill=True).add_to(feature_map)
+'''
+
 def plotDot(point):
     '''input: series that contains a numeric named latitude and a numeric named longitude
     this function creates a CircleMarker and adds it to your this_map'''
@@ -157,7 +160,7 @@ if __name__ == "__main__":
     '''
 
 
-#use df.apply(,axis=1) to iterate through every row in your dataframe
-    # geodf.apply(plotDot, axis = 1)
+use df.apply(,axis=1) to iterate through every row in your dataframe
+geodf.apply(plotDot, axis = 1)
     
     denver_map.save('folium_311_2018_points.html')
