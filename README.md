@@ -2,7 +2,7 @@
 
 ## Background & Motivation
 The City of Denver provides several essential services to its residents through the use of a centralized city service portal known as Denver 311. According to their website:
- - *Denver 311 provides residents with an effortless, accessible way to navigate city services. Our contact center staff demonstrate unparalleled customer service values, are leaders in innovative problem-solving, and deliver an unprecedented commitment to assist."
+ - Denver 311 provides residents with an effortless, accessible way to navigate city services. Our contact center staff demonstrate unparalleled customer service values, are leaders in innovative problem-solving, and deliver an unprecedented commitment to assist."
 
 I sought out to discover whether to not Denver 311 actually assisted residents of the City of Denver in getting the information or services that they are requesting from the city. Basically to provide residents of Denver with the *411 on Denver 311*. 
 
